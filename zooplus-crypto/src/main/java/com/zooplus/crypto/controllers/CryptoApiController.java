@@ -31,7 +31,6 @@ public class CryptoApiController {
     @Autowired
     CrytoApiService crytoApiService;
 
-
     private RawDBDemoGeoIPLocationService locationService;
 
     public void CrytoApiController() throws IOException, IOException {

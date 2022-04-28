@@ -21,21 +21,19 @@ public class RawDBDemoGeoIPLocationService {
 
     private DatabaseReader dbReader;
 
+    //Geolite Db configuration for Country
     public RawDBDemoGeoIPLocationService() throws IOException {
         File database = new File("src/GeoLite2-Country.mmdb");
         dbReader = new DatabaseReader.Builder(database).build();
     }
 
-    public GeoIP getLocation(String ip)
-            throws IOException, GeoIp2Exception {
+    //this will return IP Address, ISO Code of country like "US" for USA and Name of the country
+    public GeoIP getLocation(String ip) throws IOException, GeoIp2Exception {
         InetAddress ipAddress = InetAddress.getByName(ip);
         CountryResponse response = dbReader.country(ipAddress);
-
         Country country = response.getCountry();
-
         String countryName = country.getName();
         String isoCode = country.getIsoCode();
-
         return new GeoIP(ip, isoCode, countryName);
     }
 
