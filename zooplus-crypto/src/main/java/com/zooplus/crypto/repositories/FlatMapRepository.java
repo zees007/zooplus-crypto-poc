@@ -14,5 +14,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface FlatMapRepository extends CrudRepository<FlatMap, Integer> {
 
-    FlatMap findByCurrencySymbol(String currCode);
+    FlatMap findFirstByCurrencySymbol(String currCode);
+
+
 }

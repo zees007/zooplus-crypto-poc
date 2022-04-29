@@ -97,7 +97,7 @@ public class CrytoApiServiceImpl implements CrytoApiService {
                 cryptoApi.setSymbol(je.getAsJsonObject().get("symbol").getAsString());
                 cryptoApi.setCryptoCurrencyName(je.getAsJsonObject().get("name").getAsString());
                 cryptoApi.setPrice(je.getAsJsonObject().get("quote").getAsJsonObject().get(currCode).getAsJsonObject().get("price").getAsDouble());
-                FlatMap flatMap = flatMapRepository.findByCurrencySymbol(currCode);
+                FlatMap flatMap = flatMapRepository.findFirstByCurrencySymbol(currCode);
                 cryptoApi.setSign(flatMap.getCurrencySign());
                 return cryptoApi;
             } catch (IOException e) {
