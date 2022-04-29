@@ -32,6 +32,10 @@ with IP Adresss:
 Without IP Address:
 <img width="952" alt="image" src="https://user-images.githubusercontent.com/41251660/165867731-c6040d55-1e70-40de-8f5f-75e2925bf094.png">
 
+Test Case :
+<img width="943" alt="image" src="https://user-images.githubusercontent.com/41251660/165870107-1d07c303-f287-488e-bdcc-6bf36f245707.png">
+
+
 
 
 
