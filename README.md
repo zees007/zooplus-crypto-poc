@@ -8,6 +8,7 @@ How to run the project:
 3. Run the main project 
 4. hit http://localhost:8080
 
+Commit History: log.cvs inside project directory
 
 Tect Stack used: spring boot, HTML, CSS, JavaScript
 In Memory H2 db
