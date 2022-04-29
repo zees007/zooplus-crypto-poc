@@ -18,6 +18,22 @@ class ZooplusCryptoApplicationTests {
     void contextLoads() {
     }
 
-    
+    @Test
+    public void givenIP_whenFetchingCountry_thenReturnsCountryData()
+            throws IOException, GeoIp2Exception {
+        String ip = "101.53.159.255";
+        String dbLocation = "src/GeoLite2-Country.mmdb";
+
+        File database = new File(dbLocation);
+        DatabaseReader dbReader = new DatabaseReader.Builder(database)
+                .build();
+
+        InetAddress ipAddress = InetAddress.getByName(ip);
+        CountryResponse response = dbReader.country(ipAddress);
+        Country country = response.getCountry();
+        String countryName = country.getName();
+        String isoCode = country.getIsoCode();
+
+    }
 
 }
